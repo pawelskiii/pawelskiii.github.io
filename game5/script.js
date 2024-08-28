@@ -1,3 +1,17 @@
+window.addEventListener(
+  "keydown",
+  function (e) {
+    if (
+      ["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(
+        e.code
+      ) > -1
+    ) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+
 const playBoard = document.querySelector(".play-board");
 const gameWin = document.querySelector(".game-win");
 const scoreElement = document.querySelector(".score");

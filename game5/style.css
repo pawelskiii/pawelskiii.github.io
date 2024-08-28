@@ -88,12 +88,12 @@ body {
 }
 
 .play-board .food {
-  background: #8a1430;
-  border: 2px solid #b7f882;
+  background: #ffc0cb;
+  border: 2px solid #8285f8;
 }
 .play-board .head {
-  background: #b7f882;
-  border: 3px solid #8a1430;
+  background: #8285f890;
+  border: 3px solid #ffc0cb;
 }
 
 .controls {
