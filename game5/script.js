@@ -89,7 +89,7 @@ const initGame = () => {
     localStorage.setItem("high-score", highScore);
     scoreElement.innerText = `Wynik: ${scoreW}`;
     highScoreElement.innerText = `Najlepszy wynik: ${highScore}`;
-    if (scoreW >= 1 && !gameWinVisible) {
+    if (scoreW >= 12 && !gameWinVisible) {
       gameWinVisible = true;
       gameWin.appendChild(form);
     }
