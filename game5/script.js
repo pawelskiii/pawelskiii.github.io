@@ -85,7 +85,7 @@ const initGame = () => {
     updateFoodPosition();
     snakeBody.push([foodY, foodX]); // Pushing food position to snake body array
     scoreW++; // increment score by 1
-    highScore = scoreW >= highScore ? score : highScore;
+    highScore = scoreW >= highScore ? scoreW : highScore;
     localStorage.setItem("high-score", highScore);
     scoreElement.innerText = `Wynik: ${scoreW}`;
     highScoreElement.innerText = `Najlepszy wynik: ${highScore}`;
