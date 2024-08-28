@@ -61,8 +61,8 @@ const gameOver = (isVictory) => {
   // After game complete.. showing modal with relevant details
   const modalText = isVictory ? `Odgadłeś słowo:` : "Poprawna odpowiedź to:";
   gameModal.querySelector("img").src = `images/${
-    isVictory ? "victory" : "lost"
-  }.gif`;
+    isVictory ? "image-2" : "image"
+  }.png`;
   gameModal.querySelector("h4").innerText = isVictory
     ? "Brawo!"
     : "Dałeś dupy!";

@@ -77,11 +77,23 @@ body {
   font-weight: 500;
 }
 .credit a {
-  color: #56baed;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+  border: none;
+  background: #56baed;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 .credit a:hover {
-  text-decoration: underline;
+  transform: scale(0.9);
 }
 .invisible {
   display: none;
@@ -172,6 +184,11 @@ body {
   background: #fff;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
+
 .result-box {
   padding: 25px 20px;
   border-radius: 5px;
@@ -219,4 +236,7 @@ body {
 hr.dashed {
   border-top: 3px solid #56baed;
   margin-bottom: 20px;
+}
+.credit p {
+  margin-bottom: 15px;
 }

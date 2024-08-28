@@ -4,7 +4,7 @@ const cards = document.querySelectorAll(".card"),
   refreshBtn = document.querySelector(".details button"),
   nextLevel = document.querySelector(".details.hidden");
 
-let maxTime = 40;
+let maxTime = 30;
 let timeLeft = maxTime;
 let flips = 0;
 let matchedCard = 0;

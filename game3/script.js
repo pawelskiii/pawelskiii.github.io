@@ -44,11 +44,13 @@ let runBot = true; //this also a global variable with boolen value..we used this
 function clickedBox(element) {
   if (players.classList.contains("player")) {
     playerSign = "O"; //if player choose (O) then change playerSign to O
-    element.innerHTML = `<i class="${playerOIcon}"></i>`; //adding circle icon tag inside user clicked element/box
+    // element.innerHTML = `<i class="${playerOIcon}"></i>`; //adding circle icon tag inside user clicked element/box
+    element.innerHTML = `<img src="aneta.png" />`; //adding circle icon tag inside user clicked element/box
     players.classList.remove("active"); ///add active class in players
     element.setAttribute("id", playerSign); //set id attribute in span/box with player choosen sign
   } else {
-    element.innerHTML = `<i class="${playerXIcon}"></i>`; //adding cross icon tag inside user clicked element/box
+    // element.innerHTML = `<i class="${playerXIcon}"></i>`; //adding cross icon tag inside user clicked element/box
+    element.innerHTML = `<img src="lysy.png" />`; //adding cross icon tag inside user clicked element/box
     element.setAttribute("id", playerSign); //set id attribute in span/box with player choosen sign
     players.classList.add("active"); ///add active class in players
   }
@@ -78,11 +80,13 @@ function bot() {
       //if array length is greater than 0
       if (players.classList.contains("player")) {
         playerSign = "X"; //if player has chosen O then bot will X
-        allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`; //adding cross icon tag inside bot selected element
+        // allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`; //adding cross icon tag inside bot selected element
+        allBox[randomBox].innerHTML = `<img src="lysy.png"/>`; //adding cross icon tag inside bot selected element
         allBox[randomBox].setAttribute("id", playerSign); //set id attribute in span/box with player choosen sign
         players.classList.add("active"); ///add active class in players
       } else {
-        allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`; //adding circle icon tag inside bot selected element
+        // allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`; //adding circle icon tag inside bot selected element
+        allBox[randomBox].innerHTML = `<img src="aneta.png"/>`; //adding circle icon tag inside bot selected element
         players.classList.remove("active"); //remove active class in players
         allBox[randomBox].setAttribute("id", playerSign); //set id attribute in span/box with player choosen sign
       }
@@ -126,7 +130,8 @@ function selectWinner() {
       resultBox.classList.add("show");
       playBoard.classList.remove("show");
     }, 700); //1s = 1000ms
-    wonText.innerHTML = `Gracz <p>${playerSign}</p> wygrał grę!`; //displaying winning text with passing playerSign (X or O)
+    wonText.innerHTML =
+      playerSign === "X" ? "Łysy wygrał grę!" : "Antena wygrała grę!"; //displaying winning text with passing playerSign (X or O)
     if (player === playerSign) {
       nextLevel.classList.remove("invisible");
     }

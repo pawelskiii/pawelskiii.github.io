@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+  color: #242764;
 }
 body {
   display: flex;
@@ -13,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #5e63ba;
+  background: #242764;
 }
 .invisible {
   display: none;
@@ -77,7 +78,7 @@ body {
   font-weight: 600;
 }
 .game-box .guesses-text b {
-  color: #ff0000;
+  color: #900000;
 }
 .game-box .keyboard {
   display: flex;
@@ -96,7 +97,7 @@ body {
   font-weight: 600;
   border-radius: 4px;
   text-transform: uppercase;
-  background: #5e63ba;
+  background: #3c3f7c;
 }
 .keyboard button,
 .keyboard a {

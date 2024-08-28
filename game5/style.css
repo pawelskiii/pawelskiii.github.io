@@ -1,0 +1,158 @@
+/* Import Google font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #e3f2fd;
+}
+.wrapper {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  background: #293447;
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+}
+.wrapper-2 {
+  display: flex;
+  flex-direction: column;
+}
+.game-details {
+  background-color: #293447;
+  color: #b8c6dc;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+.game-details.top {
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #b8c6dc;
+}
+.game-details.bottom {
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #b8c6dc;
+}
+.play-board {
+  /* height: 600px;
+  width: 600px; */
+  display: grid;
+  position: relative;
+  /* background-color: #b8c6dc; */
+
+  grid-template: repeat(30, 20px) / repeat(30, 20px);
+}
+.play-board-bg {
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  background-color: #b8c6dc;
+}
+.play-board-bg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+.play-board-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px; /* Rozmiar kwadratów w siatce */
+  pointer-events: none; /* Zapobiega interakcjom z siatką */
+}
+
+.play-board .food {
+  background: #8a1430;
+  border: 2px solid #b7f882;
+}
+.play-board .head {
+  background: #b7f882;
+  border: 3px solid #8a1430;
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #b8c6dc;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171b26;
+}
+
+.game-details button {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #b8c6dc;
+  border-radius: 4px;
+  padding: 4px 11px;
+  background: #293447;
+  border: 2px solid #212837;
+  transition: 0.3s ease;
+}
+.game-details button:hover {
+  background: #212837;
+}
+
+form {
+  display: flex;
+}
+
+form input {
+  margin-right: 0.8rem;
+  padding: 0.2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
