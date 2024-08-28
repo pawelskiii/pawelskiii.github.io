@@ -80,6 +80,6 @@ optionImages.forEach((image, index) => {
           score.innerText = `dobra, starczy tego grania`;
         }
       }
-    }, 2000);
+    }, 1200);
   });
 });
