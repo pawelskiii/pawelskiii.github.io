@@ -93,7 +93,7 @@ optionImages.forEach((image, index) => {
         if (wins <= 3) {
           score.innerText = `${wins} / 3`;
         } else {
-          score.innerText = `dobra, starczy tego grania`;
+          score.innerText = `jeszcze jedna szybka to nie zawsze dobry pomysł`;
         }
       }
     }, 1200);
