@@ -84,7 +84,7 @@ optionImages.forEach((image, index) => {
 
       // Display the result
       result.textContent =
-        userValue === cpuValue ? "Remis" : `${outComeValue} Wygrał!!`;
+        userValue === cpuValue ? "Remis" : `${outComeValue} Wygrał!!!`;
       if (userValue !== cpuValue && didUserWin) {
         wins++;
         if (wins >= 3) {
