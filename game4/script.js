@@ -11,6 +11,8 @@ let wins = 0;
 // Loop through each option image element
 optionImages.forEach((image, index) => {
   image.addEventListener("click", (e) => {
+    userResult?.classList.remove("zoom-top-l");
+    cpuResult?.classList.remove("zoom-top-r");
     image.classList.add("active");
 
     userResult.src = cpuResult.src = "images/rock.png";
@@ -33,17 +35,24 @@ optionImages.forEach((image, index) => {
       let imageSrc = e.target.querySelector("img").src;
       // Set the user image to the clicked option image
       userResult.src = imageSrc;
+      if (userResult.src.includes("images/ja.png")) {
+        userResult?.classList.add("zoom-top-l");
+      }
 
       // Generate a random number between 0 and 2
       let randomNumber = Math.floor(Math.random() * 3);
       // Create an array of CPU image options
       let cpuImages = [
-        "images/rock.png",
-        "images/paper.png",
-        "images/scissors.png",
+        "images/miecz.png",
+        "images/lukasz.png",
+        "images/ja.png",
       ];
       // Set the CPU image to a random option from the array
       cpuResult.src = cpuImages[randomNumber];
+
+      if (cpuResult.src.includes("images/ja.png")) {
+        cpuResult?.classList.add("zoom-top-r");
+      }
 
       // Assign a letter value to the CPU option (R for rock, P for paper, S for scissors)
       let cpuValue = ["R", "P", "S"][randomNumber];
@@ -53,13 +62,13 @@ optionImages.forEach((image, index) => {
       // Create an object with all possible outcomes
       let outcomes = {
         RR: "Draw",
-        RP: "Ryś",
+        RP: "Anteta",
         RS: "Łysy",
         PP: "Draw",
         PR: "Łysy",
-        PS: "Ryś",
+        PS: "Antena",
         SS: "Draw",
-        SR: "Ryś",
+        SR: "Antena",
         SP: "Łysy",
       };
 
@@ -68,7 +77,9 @@ optionImages.forEach((image, index) => {
 
       // Display the result
       result.textContent =
-        userValue === cpuValue ? "Remis" : `${outComeValue} Wygrał!!`;
+        userValue === cpuValue
+          ? "Remis"
+          : `${outComeValue} Wygrał${outComeValue === "Antena" ? "a" : ""}!!`;
       if (userValue !== cpuValue && outComeValue === "Łysy") {
         wins++;
         if (wins >= 3) {
