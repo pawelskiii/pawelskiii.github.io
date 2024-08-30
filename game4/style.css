@@ -12,6 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   background: #f6f7fb;
+  position: relative;
 }
 .hidden {
   display: none;
@@ -50,6 +51,9 @@ body {
   }
 }
 .result_images img {
+  /* height: 120px; */
+  /* max-height: 130px; */
+  height: 100px;
   width: 100px;
 }
 .user_result img {
@@ -144,4 +148,19 @@ a:hover {
   color: white;
   background-color: #7d2ae8;
   transition: background-color 0.3s ease;
+}
+
+.text-ring {
+  position: absolute;
+  color: #7d2ae8;
+}
+.text-ring [style*="--index"] {
+  font-size: calc(var(--font-size, 2) * 1rem);
+  position: absolute;
+  opacity: 0.5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+    rotate(calc(360deg / var(--total) * var(--index)))
+    translateY(calc(var(--radius, 15) * -1ch));
 }
