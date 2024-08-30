@@ -43,8 +43,8 @@ optionImages.forEach((image, index) => {
       let randomNumber = Math.floor(Math.random() * 3);
       // Create an array of CPU image options
       let cpuImages = [
-        "images/miecz.png",
         "images/lukasz.png",
+        "images/miecz.png",
         "images/ja.png",
       ];
       // Set the CPU image to a random option from the array
@@ -62,25 +62,30 @@ optionImages.forEach((image, index) => {
       // Create an object with all possible outcomes
       let outcomes = {
         RR: "Draw",
-        RP: "Anteta",
-        RS: "Łysy",
+        RP: "Miecz",
+        RS: "Łukasz",
         PP: "Draw",
-        PR: "Łysy",
-        PS: "Antena",
+        PR: "Miecz",
+        PS: "Ryś",
         SS: "Draw",
-        SR: "Antena",
-        SP: "Łysy",
+        SR: "Łukasz",
+        SP: "Ryś",
       };
 
       // Look up the outcome value based on user and CPU options
       let outComeValue = outcomes[userValue + cpuValue];
+      let didUserWin = false;
+      if (
+        (userValue === "R" && cpuValue === "S") ||
+        (userValue === "P" && cpuValue === "R") ||
+        (userValue === "S" && cpuValue === "P")
+      )
+        didUserWin = true;
 
       // Display the result
       result.textContent =
-        userValue === cpuValue
-          ? "Remis"
-          : `${outComeValue} Wygrał${outComeValue === "Antena" ? "a" : ""}!!`;
-      if (userValue !== cpuValue && outComeValue === "Łysy") {
+        userValue === cpuValue ? "Remis" : `${outComeValue} Wygrał!!`;
+      if (userValue !== cpuValue && didUserWin) {
         wins++;
         if (wins >= 3) {
           nextLevel?.classList.remove("hidden");
