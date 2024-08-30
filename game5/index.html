@@ -13,6 +13,16 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="pytong mid hidden">
+      <p>Twój pytong jest zbyt krótki :(</p>
+      <button
+        id="play-again"
+        class="play-again"
+        onclick="function reload(){location.reload()}; reload();"
+      >
+        Graj ponownie
+      </button>
+    </div>
     <div class="wrapper-2">
       <p class="pytong">Weselny pytong zaczyna się od 12 osób</p>
       <div class="game-details top">
@@ -30,12 +40,12 @@
         </div>
       </div>
       <div class="game-details game-win bottom">
-        <button
+        <!-- <button
           class="play-again"
           onclick="function reload(){location.reload()}; reload();"
         >
           Graj ponownie
-        </button>
+        </button> -->
       </div>
     </div>
   </body>

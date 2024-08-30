@@ -13,6 +13,7 @@ const gameWin = document.querySelector(".game-win");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
+const gameOverElement = document.querySelector(".pytong.hidden");
 
 const form = document.createElement("form");
 const input = document.createElement("input");
@@ -57,6 +58,9 @@ const updateFoodPosition = () => {
 };
 
 const handleGameOver = () => {
+  if (!gameWinVisible) {
+    gameOverElement?.classList.remove("hidden");
+  }
   // Clearing the timer and reloading the page on game over
   clearInterval(setIntervalId);
   //   location.reload();
