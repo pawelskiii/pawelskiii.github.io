@@ -1,11 +1,7 @@
 window.addEventListener(
   "keydown",
   function (e) {
-    if (
-      ["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(
-        e.code
-      ) > -1
-    ) {
+    if (["ArrowUp", "ArrowDown"].indexOf(e.code) > -1) {
       e.preventDefault();
     }
   },
@@ -116,12 +112,22 @@ const initGame = () => {
   for (let i = snakeBody.length - 1; i > 0; i--) {
     snakeBody[i] = snakeBody[i - 1];
   }
-  snakeBody[0] = [snakeX, snakeY]; // Setting first element of snake body to current snake position
+  // snakeBody[0] = [snakeX, snakeY]; // Setting first element of snake body to current snake position
+
+  // // Checking if the snake's head is out of wall, if so setting gameOver to true
+  // if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+  //   return (gameOver = true);
+  // }
 
   // Checking if the snake's head is out of wall, if so setting gameOver to true
   if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
-    return (gameOver = true);
+    if (snakeX <= 0) snakeX = 30;
+    if (snakeX > 30) snakeX = 1;
+    if (snakeY <= 0) snakeY = 30;
+    if (snakeY > 30) snakeY = 1;
+    // return (gameOver = true);
   }
+  snakeBody[0] = [snakeX, snakeY]; // Setting first element of snake body to current snake position
 
   for (let i = 0; i < snakeBody.length; i++) {
     // Adding a div for each part of the snake's body
