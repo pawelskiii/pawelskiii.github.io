@@ -69,8 +69,13 @@ body {
   margin-top: 1.5rem;
 }
 
-.option_image img {
+.option_image img.r {
   width: 90px;
+  animation: rotation 4s infinite linear;
+}
+.option_image img.rr {
+  width: 90px;
+  animation: rotationr 4s infinite linear;
 }
 .zoom img {
   transform: scale(1.1);
@@ -162,5 +167,22 @@ a:hover {
   left: 50%;
   transform: translate(-50%, -50%)
     rotate(calc(360deg / var(--total) * var(--index)))
-    translateY(calc(var(--radius, 15) * -1ch));
+    translateY(calc(var(--radius, 20) * -1ch));
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotationr {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(359deg) scale(1.1);
+  }
 }
