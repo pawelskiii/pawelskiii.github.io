@@ -29,7 +29,7 @@ checkButton.innerText = "Sprawdź";
 checkButton.onclick = (e) => {
   e.preventDefault();
   if (inputText.toLowerCase() === "gdańsk") {
-    location.href = "./bilet.pdf";
+    location.href = "../index.html";
   }
 };
 
