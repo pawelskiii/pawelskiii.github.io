@@ -33,7 +33,6 @@ const resetGame = () => {
 };
 
 const getRandomWord = () => {
-  console.log({ wordListArr, wordList });
   if (wordListArr.length === 0) {
     wordListArr = new Array(...wordList);
   }
@@ -71,7 +70,6 @@ const gameOver = (isVictory) => {
 };
 
 const initGame = (button, clickedLetter) => {
-  console.log({ button, clickedLetter });
   // Checking if clickedLetter is exist on the currentWord
   if (currentWord.includes(clickedLetter)) {
     // Showing all correct letters on the word display
